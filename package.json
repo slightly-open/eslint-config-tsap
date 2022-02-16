@@ -1,0 +1,41 @@
+{
+  "name": "eslint-config-tsap",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.cjs",
+  "exports": {
+    ".": "./index.cjs",
+    "./patch/modern-module-resolution": "./patch/modern-module-resolution.cjs",
+    "./package.json": "./package.json"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slightly-open/eslint-config-tsap"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "typescript",
+    "airbnb",
+    "prettier"
+  ],
+  "author": "Denis Zavershinskiy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/slightly-open/eslint-config-tsap/issues"
+  },
+  "homepage": "https://github.com/slightly-open/eslint-config-tsap#readme",
+  "dependencies": {
+    "@rushstack/eslint-patch": "^1.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-prettier": "^4.0.0"
+  },
+  "peerDependencies": {
+    "eslint": "^7.32.0 || ^8.2.0"
+  }
+}
