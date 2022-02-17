@@ -10,19 +10,16 @@ module.exports = {
 
   // Disable the parser by default
   parser: "",
-  plugins: ["@typescript-eslint"],
-  // Manually authored .d.ts files are generally used to describe external APIs that are  not expected
-  // to follow our coding conventions.  Linting those files tends to produce a lot of spurious suppressions,
-  // so we simply ignore them.
-  ignorePatterns: ["*.d.ts"],
 
   overrides: [
     {
       files: ["*.ts", "*.tsx"],
-      parser: "@typescript-eslint/parser",
       parserOptions: {
-        // The "project" path is resolved relative to parserOptions.tsconfigRootDir.
-        // Your local .eslintrc.js must specify that parserOptions.tsconfigRootDir=__dirname.
+        /**
+         * The "project" path is resolved relative to parserOptions.tsconfigRootDir.
+         * Your local .eslintrc.js must specify that parserOptions.tsconfigRootDir=__dirname.
+         * See example in the [readme](./readme.md)
+         */
         project: "./tsconfig.json",
         ecmaVersion: "latest",
         sourceType: "module",
@@ -31,19 +28,35 @@ module.exports = {
       extends: [
         // Order matters!!!
         "airbnb",
-        // Disable rules which are already handled by TypeScript
-        "plugin:@typescript-eslint/eslint-recommended",
+
         // Apply TypeScript-specific rules
+        // It configures plugin and parser and disables eslint rules
+        // which are already handled by TypeScript
         "plugin:@typescript-eslint/recommended",
+
         // Apply TS extension rules
+        // See more: https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#extension-rules
         "./extra/extension-ts.cjs",
+
         // Apply better defaults for some rules
         "./extra/base.cjs",
+
         // My overrides for convenience
         "./extra/opinion.cjs",
+
         // Disable prettier conflicting rules
         "plugin:prettier/recommended",
+
+        // Configure import plugin for TS
+        "plugin:import/typescript",
       ],
+
+      settings: {
+        "import/resolver": {
+          // enable `eslint-import-resolver-typescript`
+          typescript: {},
+        },
+      },
     },
   ],
 };
