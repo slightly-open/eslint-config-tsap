@@ -27,6 +27,21 @@ module.exports = {
           "sibling",
           "index",
         ],
+        pathGroups: [
+          {
+            pattern: "react/**",
+            group: "external",
+            position: "before",
+            patternOptions: { partial: true },
+          },
+          {
+            pattern: "react-*/**",
+            group: "external",
+            position: "before",
+            patternOptions: { partial: true },
+          },
+        ],
+        pathGroupsExcludedImportTypes: ["builtin", "object"],
       },
     ],
 
