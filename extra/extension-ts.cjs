@@ -36,8 +36,5 @@ module.exports = {
         typedefs: false, // Type declarations are hoisted, so it's safe
       },
     ],
-    "jsx-a11y/label-has-associated-control": "off",
-    "jsx-a11y/control-has-associated-label": "off",
-    "react/destructuring-assignment": "off",
   },
 };

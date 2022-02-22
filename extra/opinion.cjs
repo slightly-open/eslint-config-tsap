@@ -23,5 +23,7 @@ module.exports = {
     // * is purely a convention and has no effect on performance, readability, or complexity.
     // * It's purely a preference
     "no-underscore-dangle": "off",
+
+    "react/destructuring-assignment": "off",
   },
 };
