@@ -10,7 +10,7 @@ module.exports = {
 
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-default-export.md
-    // * Enforce to use default export
+    // * Enforce to use named export
     // ! NOTE: there are case when default export is required (for example, in storybook).
     // ! In such cases create override to change rules only for those places
     "import/prefer-default-export": "off",
@@ -24,6 +24,9 @@ module.exports = {
     // * It's purely a preference
     "no-underscore-dangle": "off",
 
+    // Enforce consistent usage of destructuring assignment of props, state, and context
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/destructuring-assignment.md
+    // * I don't see why it makes my code better
     "react/destructuring-assignment": "off",
   },
 };
