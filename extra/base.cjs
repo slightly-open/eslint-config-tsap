@@ -1,4 +1,6 @@
+/** @type { import('eslint').Linter.Config } */
 module.exports = {
+  plugins: ["eslint-comments"],
   rules: {
     // Ensure consistent use of file extension within the import path
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
@@ -58,5 +60,10 @@ module.exports = {
         ],
       },
     ],
+
+    // require include descriptions in ESLint directive-comments
+    // https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/require-description.html
+    // * You should have a reason to disable rule
+    "eslint-comments/require-description": "error",
   },
 };
