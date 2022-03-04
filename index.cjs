@@ -34,6 +34,12 @@ module.exports = {
         // which are already handled by TypeScript
         "plugin:@typescript-eslint/recommended",
 
+        // Configure import plugin for TS
+        "plugin:import/typescript",
+
+        // Configure for the new JSX transform from React 17
+        "plugin:react/jsx-runtime",
+
         // Apply TS extension rules
         // See more: https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#extension-rules
         "./extra/extension-ts.cjs",
@@ -50,9 +56,6 @@ module.exports = {
         // Disable arrow-body-style and prefer-arrow-callback
         // See more: https://github.com/prettier/eslint-config-prettier/#arrow-body-style-and-prefer-arrow-callback
         "prettier/prettier",
-
-        // Configure import plugin for TS
-        "plugin:import/typescript",
       ],
 
       settings: {
