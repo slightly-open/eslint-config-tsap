@@ -45,7 +45,11 @@ module.exports = {
         "./extra/opinion.cjs",
 
         // Disable prettier conflicting rules
-        "plugin:prettier/recommended",
+        "prettier",
+
+        // Disable arrow-body-style and prefer-arrow-callback
+        // See more: https://github.com/prettier/eslint-config-prettier/#arrow-body-style-and-prefer-arrow-callback
+        "prettier/prettier",
 
         // Configure import plugin for TS
         "plugin:import/typescript",
