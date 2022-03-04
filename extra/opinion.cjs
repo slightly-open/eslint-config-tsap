@@ -28,5 +28,10 @@ module.exports = {
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/destructuring-assignment.md
     // * I don't see why it makes my code better
     "react/destructuring-assignment": "off",
+
+    // Enforce shorthand or standard form for React fragments.
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-fragments.md
+    // * The element mode is more clear (as more explicit)
+    "react/jsx-fragments": ["error", "element"],
   },
 };
