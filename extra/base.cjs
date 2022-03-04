@@ -2,6 +2,11 @@
 module.exports = {
   plugins: ["eslint-comments"],
   rules: {
+    // Restrict file extensions that may contain JSX
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
+    // * It is here to allow .tsx extension
+    "react/jsx-filename-extension": ["error", { extensions: [".tsx", ".jsx"] }],
+
     // Ensure consistent use of file extension within the import path
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
     // * It is here to forbid .ts and .tsx extensions
