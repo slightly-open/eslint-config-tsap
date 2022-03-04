@@ -33,5 +33,19 @@ module.exports = {
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-fragments.md
     // * The element mode is more clear (as more explicit)
     "react/jsx-fragments": ["error", "element"],
+
+    // Enforce that a label tag has a text label and an associated control
+    // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/label-has-associated-control.md
+    // airbnb set `assert:both` but I think `either` makes more sense
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        labelComponents: [],
+        labelAttributes: [],
+        controlComponents: [],
+        assert: "either",
+        depth: 25,
+      },
+    ],
   },
 };
