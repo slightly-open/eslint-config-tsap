@@ -34,9 +34,31 @@ module.exports = {
     // * The element mode is more clear (as more explicit)
     "react/jsx-fragments": ["error", "element"],
 
+    // disallow certain syntax forms
+    // https://eslint.org/docs/rules/no-restricted-syntax
+    // * airbnb restricts for..of loops
+    "no-restricted-syntax": [
+      "error",
+      {
+        selector: "ForInStatement",
+        message:
+          "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.",
+      },
+      {
+        selector: "LabeledStatement",
+        message:
+          "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.",
+      },
+      {
+        selector: "WithStatement",
+        message:
+          "`with` is disallowed in strict mode because it makes code impossible to predict and optimize.",
+      },
+    ],
+
     // Enforce that a label tag has a text label and an associated control
     // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/label-has-associated-control.md
-    // airbnb set `assert:both` but I think `either` makes more sense
+    // * airbnb set `assert:both` but I think `either` makes more sense
     "jsx-a11y/label-has-associated-control": [
       "error",
       {
